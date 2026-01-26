@@ -5,16 +5,16 @@ description: List all available OpenCode skills sorted by scope (project, global
 # Available Skills
 
 ## Repository Skills (skills/)
-!`ls -1 skills/ 2>/dev/null | while read skill; do if [ -f "skills/$skill/SKILL.md" ]; then desc=$(grep -A1 "^description:" "skills/$skill/SKILL.md" 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
+!`bash -c 'found=0; for d in skills/*/; do [ -d "$d" ] && skill=$(basename "$d") && found=1 && echo "• $skill"; done; [ $found -eq 0 ] && echo "None"'`
 
 ## Global Skills (~/.config/opencode/skills/)
-!`ls -1 ~/.config/opencode/skills/ 2>/dev/null | while read skill; do if [ -f ~/.config/opencode/skills/$skill/SKILL.md ]; then desc=$(grep -A1 "^description:" ~/.config/opencode/skills/$skill/SKILL.md 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
+!`bash -c 'found=0; for d in ~/.config/opencode/skills/*/; do [ -d "$d" ] && skill=$(basename "$d") && found=1 && echo "• $skill"; done; [ $found -eq 0 ] && echo "None"'`
 
 ## Project Claude-compatible (.claude/skills/)
-!`ls -1 .claude/skills/ 2>/dev/null | while read skill; do if [ -f ".claude/skills/$skill/SKILL.md" ]; then desc=$(grep -A1 "^description:" ".claude/skills/$skill/SKILL.md" 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
+!`bash -c 'found=0; for d in .claude/skills/*/; do [ -d "$d" ] && skill=$(basename "$d") && found=1 && echo "• $skill"; done; [ $found -eq 0 ] && echo "None"'`
 
 ## Global Claude-compatible (~/.claude/skills/)
-!`ls -1 ~/.claude/skills/ 2>/dev/null | while read skill; do if [ -f ~/.claude/skills/$skill/SKILL.md ]; then desc=$(grep -A1 "^description:" ~/.claude/skills/$skill/SKILL.md 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
+!`bash -c 'found=0; for d in ~/.claude/skills/*/; do [ -d "$d" ] && skill=$(basename "$d") && found=1 && echo "• $skill"; done; [ $found -eq 0 ] && echo "None"'`
 
 ## Your Task
 
