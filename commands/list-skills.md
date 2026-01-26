@@ -4,8 +4,8 @@ description: List all available OpenCode skills sorted by scope (project, global
 
 # Available Skills
 
-## Project Skills (.opencode/skills/)
-!`ls -1 .opencode/skills/ 2>/dev/null | while read skill; do if [ -f ".opencode/skills/$skill/SKILL.md" ]; then desc=$(grep -A1 "^description:" ".opencode/skills/$skill/SKILL.md" 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
+## Repository Skills (skills/)
+!`ls -1 skills/ 2>/dev/null | while read skill; do if [ -f "skills/$skill/SKILL.md" ]; then desc=$(grep -A1 "^description:" "skills/$skill/SKILL.md" 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
 
 ## Global Skills (~/.config/opencode/skills/)
 !`ls -1 ~/.config/opencode/skills/ 2>/dev/null | while read skill; do if [ -f ~/.config/opencode/skills/$skill/SKILL.md ]; then desc=$(grep -A1 "^description:" ~/.config/opencode/skills/$skill/SKILL.md 2>/dev/null | head -1 | sed 's/description: *//'); echo "• $skill - $desc"; fi; done || echo "None"`
