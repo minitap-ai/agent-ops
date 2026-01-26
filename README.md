@@ -1,6 +1,6 @@
 # AgentOps - OpenCode Configuration
 
-Shared OpenCode configuration for the team including MCP servers, plugins, skills, and custom agents.
+Shared OpenCode configuration for the team including MCP servers, plugins, skills, commands, and custom agents.
 
 ## Quick Setup
 
@@ -11,6 +11,6 @@ opencode
 ```
 
 Then type `/check-update` - this single command handles everything:
-- Creates missing directories (skills, agents, commands)
-- Shows what's different and offers to sync
+- Creates missing directories (skills, agents, commands) in your global config, if they don't exist
+- Shows what's different and offers to sync (MCP servers, plugins, skills, commands, agents)
 - Prompts you to fill in API keys and authenticate MCP servers
