@@ -1,7 +1,7 @@
 ---
 description: Autonomous coding agent that implements Notion tickets end-to-end. Use for implementing features, bug fixes, or tasks from Notion tickets. Triggers on "implement this ticket", "do this ticket", "code this", or when given a Notion ticket URL.
 mode: primary
-model: anthropic/claude-opus-4-5
+model: anthropic/claude-opus-4-6
 tools:
   notion*: true
   github*: true
